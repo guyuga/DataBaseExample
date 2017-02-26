@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.guyuga.databaseproject.ViewModel.CourseRowViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:text="@string/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/course_name_Title"
+            style="@style/TextTitleStyle" />
+
+        <TextView
+            android:text="@string/credits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/course_name_Title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/course_credits_Title"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@{viewModel.courseName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/course_name_Title"
+            android:layout_toEndOf="@+id/course_name_Title"
+            android:layout_marginStart="10dp"
+            android:id="@+id/course_name"
+            style="@style/TextTitleStyle"/>
+
+        <TextView
+            android:text="@{viewModel.courseCredits}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/course_credits_Title"
+            android:layout_toEndOf="@+id/course_credits_Title"
+            android:layout_marginStart="10dp"
+            android:id="@+id/course_credits"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@{viewModel.numberOfStudents}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/course_credits"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/course_number_courses"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@string/number_of_students"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/course_credits"
+            android:layout_toStartOf="@+id/course_number_courses"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/course_number_courses_title"
+            style="@style/TextBodyStyle"/>
+    </RelativeLayout>
+</layout>

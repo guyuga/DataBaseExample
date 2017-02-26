@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.guyuga.databaseproject.ViewModel.StudentRowViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="2dp">
+
+        <TextView
+            android:text="@string/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/nameTitle"
+            style="@style/TextTitleStyle" />
+
+        <TextView
+            android:text="@string/birth_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/birth_date_title"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@{viewModel.studentName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/nameTitle"
+            android:layout_toEndOf="@+id/nameTitle"
+            android:layout_marginStart="10dp"
+            android:id="@+id/name"
+            style="@style/TextTitleStyle"/>
+
+        <TextView
+            android:text="@{viewModel.studentBirthDate}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/birth_date_title"
+            android:layout_toEndOf="@+id/birth_date_title"
+            android:layout_marginStart="10dp"
+            android:id="@+id/birth_date"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@{viewModel.numberOfCourses}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/birth_date"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/number_courses"
+            style="@style/TextBodyStyle"/>
+
+        <TextView
+            android:text="@string/number_of_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/birth_date"
+            android:layout_toStartOf="@+id/number_courses"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/number_courses_title"
+            style="@style/TextBodyStyle"/>
+    </RelativeLayout>
+</layout>
