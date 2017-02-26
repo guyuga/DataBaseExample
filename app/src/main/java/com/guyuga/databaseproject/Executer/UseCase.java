@@ -14,7 +14,7 @@ public abstract class UseCase<Q extends UseCase.RequestValue, P extends UseCase.
         return mRequestValue;
     }
 
-    void setRequestValue(Q mRequestValue) {
+    public void setRequestValue(Q mRequestValue) {
         this.mRequestValue = mRequestValue;
     }
 
@@ -22,7 +22,7 @@ public abstract class UseCase<Q extends UseCase.RequestValue, P extends UseCase.
         return mUseCaseCallback;
     }
 
-    void setUseCaseCallback(UseCaseCallback<P> mUseCaseCallback) {
+    public void setUseCaseCallback(UseCaseCallback<P> mUseCaseCallback) {
         this.mUseCaseCallback = mUseCaseCallback;
     }
 
@@ -34,7 +34,7 @@ public abstract class UseCase<Q extends UseCase.RequestValue, P extends UseCase.
 
     public interface ResponseValue {}
 
-    interface UseCaseCallback<R> {
+    public interface UseCaseCallback<R> {
 
         void onSuccess(R response);
 
